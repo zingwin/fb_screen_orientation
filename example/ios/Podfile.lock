@@ -1,0 +1,22 @@
+PODS:
+  - fb_screen_orientation (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - fb_screen_orientation (from `.symlinks/plugins/fb_screen_orientation/ios`)
+  - Flutter (from `Flutter`)
+
+EXTERNAL SOURCES:
+  fb_screen_orientation:
+    :path: ".symlinks/plugins/fb_screen_orientation/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  fb_screen_orientation: 7429fd0df432ae022b6a1c690cb0afe39211ffc1
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+
+PODFILE CHECKSUM: 8e679eca47255a8ca8067c4c67aab20e64cb974d
+
+COCOAPODS: 1.11.2
