@@ -3,7 +3,7 @@ package com.example.fb_screen_orientation;
 import android.content.Context;
 import android.hardware.SensorManager;
 import android.os.Build;
-import android.provider.Settings;
+//import android.provider.Settings;
 import android.view.OrientationEventListener;
 
 import androidx.annotation.NonNull;
@@ -55,12 +55,10 @@ public class FbScreenOrientationPlugin implements FlutterPlugin, MethodCallHandl
               SensorManager.SENSOR_DELAY_NORMAL) {
         @Override
         public void onOrientationChanged(int orientation) {
-          //如果当前开启了竖屏锁定，则不回调
-          int flag = Settings.System.getInt(context.getContentResolver(),
-                  Settings.System.ACCELEROMETER_ROTATION, 1);
-          if(flag != 1){
-            return;
-          }
+//          如果当前开启了竖屏锁定，则不回调
+///          int flag = Settings.System.getInt(context.getContentResolver(),
+///                  Settings.System.ACCELEROMETER_ROTATION, 1);
+///          if(flag != 1) return;
           if (orientation == OrientationEventListener.ORIENTATION_UNKNOWN) {
             return;  //手机平放时，检测不到有效的角度
           }

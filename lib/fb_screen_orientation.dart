@@ -96,4 +96,12 @@ class FbScreenOrientation {
   void listenerOrientation(Function orientationCallback) async {
     self!.screenOrientationService!.setOrientationCallback(orientationCallback);
   }
+
+  Future<void> cancel() async {
+    if (Platform.isIOS) {
+      self!.screenOrientationService!.cancel();
+    } else if (Platform.isAndroid) {
+      self!.screenOrientationService!.cancel();
+    }
+  }
 }
