@@ -99,9 +99,9 @@ class FbScreenOrientation {
 
   Future<void> cancel() async {
     if (Platform.isIOS) {
-      self!.screenOrientationService!.cancel();
+      self?.screenOrientationService?.cancel();
     } else if (Platform.isAndroid) {
-      self!.screenOrientationService!.cancel();
+      self?.screenOrientationService?.cancel();
     }
   }
 }
