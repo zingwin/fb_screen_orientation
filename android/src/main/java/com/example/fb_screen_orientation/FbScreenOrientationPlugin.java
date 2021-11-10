@@ -44,8 +44,10 @@ public class FbScreenOrientationPlugin implements FlutterPlugin, MethodCallHandl
   }
 
   private boolean cancelOrientaion(){
-    mOrientationListener.disable();
-    mOrientationListener = null;
+    if(mOrientationListener != null){
+      mOrientationListener.disable();
+      mOrientationListener = null;
+    }
     return true;
   }
 
