@@ -18,16 +18,20 @@ static FlutterMethodChannel *methodChannel;
     if ( [@"init" isEqualToString:call.method] )
     {
         [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+        [self cancelIfNeed];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientaionDidChange:) name:UIDeviceOrientationDidChangeNotification object:[UIDevice currentDevice]];
     }else if ( [@"cancel" isEqualToString:call.method] )
     {
         [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:[UIDevice currentDevice]];
+        [self cancelIfNeed];
     } else {
         result( FlutterMethodNotImplemented );
     }
 }
 
+-(void)cancelIfNeed{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:[UIDevice currentDevice]];
+}
 
 - (void)deviceOrientaionDidChange:(NSNotification *)noty
 {

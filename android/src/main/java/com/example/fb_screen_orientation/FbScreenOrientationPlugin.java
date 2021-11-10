@@ -53,6 +53,8 @@ public class FbScreenOrientationPlugin implements FlutterPlugin, MethodCallHandl
 
   private void initOrientation() {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.CUPCAKE) {
+      cancelOrientaion(); //cancel if need
+
       mOrientationListener = new OrientationEventListener(context,
               SensorManager.SENSOR_DELAY_NORMAL) {
         @Override
